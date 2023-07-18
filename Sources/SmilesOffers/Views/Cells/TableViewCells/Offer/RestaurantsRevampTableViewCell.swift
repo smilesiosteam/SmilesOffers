@@ -9,9 +9,9 @@ import UIKit
 import LottieAnimationManager
 import SmilesUtilities
 
-class RestaurantsRevampTableViewCell: UITableViewCell {
+public class RestaurantsRevampTableViewCell: UITableViewCell {
     
-    enum OfferCellType {
+    public enum OfferCellType {
         case home
         case collectionDetails
         case categoryDetails
@@ -65,24 +65,24 @@ class RestaurantsRevampTableViewCell: UITableViewCell {
     @IBOutlet var cuisinesLabelTopToPartnerImage: NSLayoutConstraint!
     @IBOutlet var cuisinesLabelTopToRatingView: NSLayoutConstraint!
     
-    var restaurantData: Restaurant?
-    var offerData: OfferDO?
-    var favoriteCallback: ((_ isFavorite: Bool, _ restaurantId: String) -> ())?
+    public var restaurantData: Restaurant?
+    public var offerData: OfferDO?
+    public var favoriteCallback: ((_ isFavorite: Bool, _ restaurantId: String) -> ())?
     
-    var offerCellType: OfferCellType = .home
+    public var offerCellType: OfferCellType = .home
     private let isFavoriteOfferNil = false
     public static let module = Bundle.module
     
     //MARK: - Cell Lifecycle
 
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         setupUI()
         setupFonts()
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    public override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
@@ -165,11 +165,11 @@ class RestaurantsRevampTableViewCell: UITableViewCell {
         }
     }
     
-    func setBackGroundColor(color: UIColor) {
+    public func setBackGroundColor(color: UIColor) {
         contentView.backgroundColor = color
     }
     
-    func showFavouriteAnimation(isRestaurant: Bool = true) {
+    public func showFavouriteAnimation(isRestaurant: Bool = true) {
         
         let showAnimation = isRestaurant ? restaurantData?.isFavoriteRestaurant : offerData?.isWishlisted
         if showAnimation ?? false {
@@ -204,7 +204,7 @@ class RestaurantsRevampTableViewCell: UITableViewCell {
     }
     
     // MARK: -- For restaurant cell in FoodOrderRevamp
-    func configureCell(with restaurant: Restaurant) {
+    public func configureCell(with restaurant: Restaurant) {
         cuisinesLabelTopToPartnerImage.isActive = false
         cuisinesLabelTopToRatingView.isActive = true
         
@@ -363,7 +363,7 @@ class RestaurantsRevampTableViewCell: UITableViewCell {
         }
     }
     
-    func configureCell(with nearbyOffer: OfferDO) {
+    public func configureCell(with nearbyOffer: OfferDO) {
         cuisinesLabelTopToPartnerImage.isActive = true
         cuisinesLabelTopToRatingView.isActive = false
         
