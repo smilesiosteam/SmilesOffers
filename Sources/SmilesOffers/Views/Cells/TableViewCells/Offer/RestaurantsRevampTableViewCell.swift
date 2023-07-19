@@ -383,7 +383,6 @@ public class RestaurantsRevampTableViewCell: UITableViewCell {
         closingTimeView.isHidden = true
         restaurantDistanceView.isHidden = true
         partnerImageView.isHidden = false
-        notEligibleView.isHidden = true
         
         ribbonImageView.isHidden = !nearbyOffer.isFeatured
         offerViewTrailingSpaceFromRibbon.priority = nearbyOffer.isFeatured ? .defaultHigh : .defaultLow
