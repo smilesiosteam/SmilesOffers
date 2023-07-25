@@ -372,7 +372,8 @@ public class RestaurantsRevampTableViewCell: UITableViewCell {
         case .home:
             checkDealForEligability(offer: nearbyOffer)
         case .manCity:
-            break
+            notEligibleView.alpha = 0.0
+            self.isUserInteractionEnabled = true
         default:
             checkOfferForEligibility(offer: nearbyOffer)
         }
