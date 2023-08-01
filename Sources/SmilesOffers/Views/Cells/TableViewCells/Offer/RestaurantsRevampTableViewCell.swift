@@ -397,6 +397,8 @@ public class RestaurantsRevampTableViewCell: UITableViewCell {
         
         if let partnerName = nearbyOffer.partnerName {
             cuisinesLabel.text = partnerName
+        } else {
+            cuisinesLabel.text = ""
         }
 
         restaurantImageView.setImageWithUrlString(nearbyOffer.imageURL.asStringOrEmpty(),defaultImage: "offerDefaultPlaceholder")
