@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Medium.ttf">
+            <string>Lato-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="ZFR-XZ-WzX" customClass="MapCustomPinView" customModule="Smiles" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="220" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fSI-sY-FLc" customClass="RoundUIView" customModule="Smiles" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="220" height="65.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place the pin on the most accurate location" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fj8-w7-uU1">
+                            <rect key="frame" x="16" y="16" width="188" height="33.5"/>
+                            <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.21176470588235294" green="0.21568627450980393" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Fj8-w7-uU1" secondAttribute="trailing" constant="16" id="3Dt-ZE-cKW"/>
+                        <constraint firstItem="Fj8-w7-uU1" firstAttribute="leading" secondItem="fSI-sY-FLc" secondAttribute="leading" constant="16" id="8kk-xl-oXi"/>
+                        <constraint firstItem="Fj8-w7-uU1" firstAttribute="centerX" secondItem="fSI-sY-FLc" secondAttribute="centerX" id="N0B-Tr-Oom"/>
+                        <constraint firstAttribute="bottom" secondItem="Fj8-w7-uU1" secondAttribute="bottom" constant="16" id="Zqh-0p-ARZ"/>
+                        <constraint firstItem="Fj8-w7-uU1" firstAttribute="top" secondItem="fSI-sY-FLc" secondAttribute="top" constant="16" id="uVa-vW-y1d"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BottomArrow" translatesAutoresizingMaskIntoConstraints="NO" id="mrP-aF-5oO">
+                    <rect key="frame" x="0.0" y="65.5" width="220" height="9.5"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="9.5" id="SHT-8I-Vek"/>
+                        <constraint firstAttribute="width" constant="220" id="aDv-9X-Wcz"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="mrP-aF-5oO" secondAttribute="trailing" id="6Qa-OI-9JP"/>
+                <constraint firstItem="mrP-aF-5oO" firstAttribute="leading" secondItem="ZFR-XZ-WzX" secondAttribute="leading" id="Gg5-js-WHy"/>
+                <constraint firstItem="fSI-sY-FLc" firstAttribute="leading" secondItem="ZFR-XZ-WzX" secondAttribute="leading" id="ILF-GQ-Tc6"/>
+                <constraint firstAttribute="trailing" secondItem="fSI-sY-FLc" secondAttribute="trailing" id="b4F-NL-Lpr"/>
+                <constraint firstItem="mrP-aF-5oO" firstAttribute="top" secondItem="fSI-sY-FLc" secondAttribute="bottom" id="fPP-zk-3hS"/>
+                <constraint firstAttribute="bottom" secondItem="mrP-aF-5oO" secondAttribute="bottom" id="qY5-jF-KRf"/>
+                <constraint firstItem="fSI-sY-FLc" firstAttribute="top" secondItem="ZFR-XZ-WzX" secondAttribute="top" id="vCD-SK-5H6"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageView" destination="mrP-aF-5oO" id="AcY-B9-ZCZ"/>
+                <outlet property="labelTopConstraint" destination="uVa-vW-y1d" id="wVW-6x-qjM"/>
+                <outlet property="roundView" destination="fSI-sY-FLc" id="TZi-ap-evI"/>
+                <outlet property="titleLabel" destination="Fj8-w7-uU1" id="Iws-Rc-Ejx"/>
+            </connections>
+            <point key="canvasLocation" x="185.50724637681162" y="-306.02678571428572"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="BottomArrow" width="20" height="12"/>
+    </resources>
+</document>

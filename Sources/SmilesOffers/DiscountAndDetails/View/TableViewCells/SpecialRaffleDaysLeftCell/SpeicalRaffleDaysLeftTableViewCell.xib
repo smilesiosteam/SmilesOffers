@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
+        </array>
+        <array key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
+        </array>
+        <array key="Montserrat-SemiBold.otf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SpeicalRaffleDaysLeftTableViewCell" rowHeight="126" id="KGk-i7-Jjw" customClass="SpeicalRaffleDaysLeftTableViewCell" customModule="Smiles" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="385" height="126"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="385" height="126"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kk7-mm-hLJ">
+                        <rect key="frame" x="0.0" y="0.0" width="385" height="57"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deal ends in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4N-3f-HvW">
+                                <rect key="frame" x="16" y="8" width="96" height="18.5"/>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deal ends in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84N-jF-Rxj" customClass="CountdownLabel" customModule="Smiles" customModuleProvider="target">
+                                <rect key="frame" x="272.5" y="1" width="94.5" height="18.5"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deal ends in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMf-dl-Z2A">
+                                <rect key="frame" x="272.5" y="19.5" width="94.5" height="15"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92156862745098034" green="0.54117647058823526" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="MMf-dl-Z2A" firstAttribute="leading" secondItem="84N-jF-Rxj" secondAttribute="leading" id="2Ci-sn-66j"/>
+                            <constraint firstItem="MMf-dl-Z2A" firstAttribute="top" secondItem="84N-jF-Rxj" secondAttribute="bottom" id="6jT-B9-oz7"/>
+                            <constraint firstItem="84N-jF-Rxj" firstAttribute="leading" secondItem="b4N-3f-HvW" secondAttribute="trailing" priority="250" constant="20" id="88t-Lw-zfW"/>
+                            <constraint firstAttribute="height" constant="57" id="DOn-YF-Xv0"/>
+                            <constraint firstItem="84N-jF-Rxj" firstAttribute="top" secondItem="kk7-mm-hLJ" secondAttribute="top" constant="1" id="Fiz-Jf-dJ8"/>
+                            <constraint firstItem="MMf-dl-Z2A" firstAttribute="trailing" secondItem="84N-jF-Rxj" secondAttribute="trailing" id="HDy-Z9-Udy"/>
+                            <constraint firstItem="b4N-3f-HvW" firstAttribute="leading" secondItem="kk7-mm-hLJ" secondAttribute="leading" constant="16" id="HeR-qj-owy"/>
+                            <constraint firstItem="b4N-3f-HvW" firstAttribute="top" secondItem="kk7-mm-hLJ" secondAttribute="top" constant="8" id="IEa-qH-GSI"/>
+                            <constraint firstAttribute="trailing" secondItem="84N-jF-Rxj" secondAttribute="trailing" constant="18" id="J7M-Ln-Mwt"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="kk7-mm-hLJ" secondAttribute="trailing" id="7tR-Sc-UlK"/>
+                    <constraint firstAttribute="bottom" secondItem="kk7-mm-hLJ" secondAttribute="bottom" constant="10" id="A2K-RI-5Hs"/>
+                    <constraint firstItem="kk7-mm-hLJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Kbr-pI-1iD"/>
+                    <constraint firstItem="kk7-mm-hLJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Yfe-hv-Tlz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="containerView" destination="kk7-mm-hLJ" id="xKJ-Oc-fWL"/>
+                <outlet property="dealEndsTitleLbl" destination="b4N-3f-HvW" id="XwB-dU-s7Q"/>
+                <outlet property="dealHourMinLbl" destination="MMf-dl-Z2A" id="Tsq-Cc-Jfb"/>
+                <outlet property="dealTimerLbl" destination="84N-jF-Rxj" id="FdF-vO-Ltg"/>
+            </connections>
+            <point key="canvasLocation" x="184.78260869565219" y="123.88392857142857"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="84N-jF-Rxj">
+            <size key="intrinsicContentSize" width="94.5" height="18.5"/>
+        </designable>
+    </designables>
+</document>

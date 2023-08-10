@@ -18,8 +18,11 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
         .package(url: "https://github.com/smilesiosteam/SmilesBaseMainRequest.git", branch: "main"),
-        .package(url: "https://github.com/smilesiosteam/SmilesUtilities.git", branch: "main"),
-        .package(url: "https://github.com/smilesiosteam/LottieAnimationManager.git", branch: "main")
+        .package(url: "https://github.com/smilesiosteam/SmilesUtilities.git", branch: "Changes_For_offers"),
+        .package(url: "https://github.com/smilesiosteam/LottieAnimationManager.git", branch: "main"),
+        .package(url: "https://github.com/smilesiosteam/NetworkingLayer.git", .upToNextMinor(from: "1.0.0")),
+        .package(url: "https://github.com/smilesiosteam/SmilesLocationHandler.git", .upToNextMinor(from: "1.0.0")),
+        .package(url: "https://github.com/YAtechnologies/GoogleMaps-SP.git", .upToNextMinor(from: "7.2.0"))
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -29,7 +32,10 @@ let package = Package(
             dependencies: [
                 .product(name: "SmilesBaseMainRequestManager", package: "SmilesBaseMainRequest"),
                 .product(name: "SmilesUtilities", package: "SmilesUtilities"),
-                .product(name: "LottieAnimationManager", package: "LottieAnimationManager")
+                .product(name: "LottieAnimationManager", package: "LottieAnimationManager"),
+                .product(name: "NetworkingLayer", package: "NetworkingLayer"),
+                .product(name: "SmilesLocationHandler", package: "SmilesLocationHandler"),
+                .product(name: "GoogleMaps", package: "GoogleMaps-SP")
             ]),
     ]
 )

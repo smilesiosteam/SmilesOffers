@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+        <array key="Lato-SemiBold.ttf">
+            <string>Lato-SemiBold</string>
+        </array>
+        <array key="Montserrat-SemiBold.otf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="249" id="KGk-i7-Jjw" customClass="DiscountAndDetailsCashVoucherTableViewCell" customModule="Smiles" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="421" height="251"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="421" height="251"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NsH-C5-9gU">
+                        <rect key="frame" x="0.0" y="0.0" width="421" height="251"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Afx-KY-G6x" customClass="BaseLabel" customModule="Smiles" customModuleProvider="target">
+                                <rect key="frame" x="16" y="16" width="389" height="42"/>
+                                <string key="text">Enjoy shopping at Carrefour with a Smiles voucher. Don’t have enough points? Buy a voucher using a credit card and earn 2 Smiles points/AED.</string>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter voucher amount (AED)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4WD-bn-fT7" customClass="BaseLabel" customModule="Smiles" customModuleProvider="target">
+                                <rect key="frame" x="16" y="74" width="164.5" height="15.5"/>
+                                <fontDescription key="fontDescription" name="Lato-SemiBold" family="Lato" pointSize="13"/>
+                                <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aBY-MN-0yA">
+                                <rect key="frame" x="16" y="93.5" width="389" height="48"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Voucher amount" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6lg-NE-yqr">
+                                        <rect key="frame" x="16" y="8" width="357" height="32"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" red="0.64313725490196072" green="0.64313725490196072" blue="0.64313725490196072" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="6lg-NE-yqr" firstAttribute="leading" secondItem="aBY-MN-0yA" secondAttribute="leading" constant="16" id="TGu-yC-5ty"/>
+                                    <constraint firstItem="6lg-NE-yqr" firstAttribute="top" secondItem="aBY-MN-0yA" secondAttribute="top" constant="8" id="c25-ej-X2u"/>
+                                    <constraint firstAttribute="height" constant="48" id="iTi-sC-cd4"/>
+                                    <constraint firstAttribute="trailing" secondItem="6lg-NE-yqr" secondAttribute="trailing" constant="16" id="mhs-lm-ZrE"/>
+                                    <constraint firstAttribute="bottom" secondItem="6lg-NE-yqr" secondAttribute="bottom" constant="8" id="wwu-J0-Gd7"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="RuL-qy-S8f">
+                                <rect key="frame" x="16" y="163.5" width="389" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="jqg-6m-902"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v6a-Mv-XTn">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8P-jT-vgb" customClass="BaseLabel" customModule="Smiles" customModuleProvider="target">
+                                <rect key="frame" x="16" y="141.5" width="389" height="0.0"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="10"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="V8P-jT-vgb" firstAttribute="top" secondItem="aBY-MN-0yA" secondAttribute="bottom" id="0ve-7b-cGV"/>
+                            <constraint firstItem="aBY-MN-0yA" firstAttribute="top" secondItem="4WD-bn-fT7" secondAttribute="bottom" constant="4" id="6S6-gJ-GFT"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="RuL-qy-S8f" secondAttribute="bottom" constant="24" id="8xb-ym-T80"/>
+                            <constraint firstItem="V8P-jT-vgb" firstAttribute="leading" secondItem="NsH-C5-9gU" secondAttribute="leading" constant="16" id="BVl-bS-lxD"/>
+                            <constraint firstItem="Afx-KY-G6x" firstAttribute="leading" secondItem="NsH-C5-9gU" secondAttribute="leading" constant="16" id="HxQ-jv-lf4"/>
+                            <constraint firstItem="4WD-bn-fT7" firstAttribute="top" secondItem="Afx-KY-G6x" secondAttribute="bottom" constant="16" id="JZd-xD-8wz"/>
+                            <constraint firstItem="aBY-MN-0yA" firstAttribute="leading" secondItem="NsH-C5-9gU" secondAttribute="leading" constant="16" id="Lf1-gk-IdK"/>
+                            <constraint firstItem="Afx-KY-G6x" firstAttribute="top" secondItem="NsH-C5-9gU" secondAttribute="top" constant="16" id="YW7-Gz-W1h"/>
+                            <constraint firstItem="RuL-qy-S8f" firstAttribute="leading" secondItem="NsH-C5-9gU" secondAttribute="leading" constant="16" id="ZIp-7U-Wg0"/>
+                            <constraint firstAttribute="trailing" secondItem="RuL-qy-S8f" secondAttribute="trailing" constant="16" id="auh-ig-Dpv"/>
+                            <constraint firstAttribute="trailing" secondItem="aBY-MN-0yA" secondAttribute="trailing" constant="16" id="bwz-mF-AJr"/>
+                            <constraint firstItem="RuL-qy-S8f" firstAttribute="top" secondItem="V8P-jT-vgb" secondAttribute="bottom" constant="22" id="e5Y-y7-NxY"/>
+                            <constraint firstAttribute="trailing" secondItem="V8P-jT-vgb" secondAttribute="trailing" constant="16" id="pwQ-Wj-lFW"/>
+                            <constraint firstItem="4WD-bn-fT7" firstAttribute="leading" secondItem="NsH-C5-9gU" secondAttribute="leading" constant="16" id="slz-wV-wem"/>
+                            <constraint firstAttribute="trailing" secondItem="Afx-KY-G6x" secondAttribute="trailing" constant="16" id="vz4-rA-rAJ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="NsH-C5-9gU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="AMh-SS-vWL"/>
+                    <constraint firstItem="NsH-C5-9gU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="YwQ-92-l8q"/>
+                    <constraint firstAttribute="trailing" secondItem="NsH-C5-9gU" secondAttribute="trailing" id="t9v-5F-VTg"/>
+                    <constraint firstAttribute="bottom" secondItem="NsH-C5-9gU" secondAttribute="bottom" id="yrm-Xl-oM9"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="amountCollectionView" destination="RuL-qy-S8f" id="YwD-Yj-ZfT"/>
+                <outlet property="amountText" destination="6lg-NE-yqr" id="fGH-C4-ZdA"/>
+                <outlet property="errorLabel" destination="V8P-jT-vgb" id="pQW-KN-k4m"/>
+                <outlet property="voucherAmountText" destination="4WD-bn-fT7" id="Oba-s0-7HO"/>
+                <outlet property="voucherAmountView" destination="aBY-MN-0yA" id="ywD-BM-08Z"/>
+                <outlet property="voucherDescriptionLbl" destination="Afx-KY-G6x" id="7Ak-BT-QIP"/>
+            </connections>
+            <point key="canvasLocation" x="210.86956521739131" y="152.34375"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="4WD-bn-fT7">
+            <size key="intrinsicContentSize" width="164.5" height="15.5"/>
+        </designable>
+        <designable name="Afx-KY-G6x">
+            <size key="intrinsicContentSize" width="772" height="14"/>
+        </designable>
+        <designable name="V8P-jT-vgb"/>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

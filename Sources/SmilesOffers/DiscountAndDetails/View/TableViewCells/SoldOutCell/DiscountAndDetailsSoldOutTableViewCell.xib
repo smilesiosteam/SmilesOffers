@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+        <array key="Montserrat-SemiBold.otf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DiscountAndDetailsSoldOutTableViewCell" rowHeight="102" id="KGk-i7-Jjw" customClass="DiscountAndDetailsSoldOutTableViewCell" customModule="Smiles" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="389" height="102"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="389" height="102"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OhF-rw-aRd">
+                        <rect key="frame" x="0.0" y="0.0" width="389" height="92"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOLD OUT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oy1-R8-naD">
+                                <rect key="frame" x="148.5" y="16" width="92" height="21"/>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscribe to Unlimited Buy 1 Get 1 to enjoy cinema vouchers. Limited quantities available!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlU-dt-Ysp">
+                                <rect key="frame" x="16" y="45" width="357" height="29"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                <color key="textColor" red="0.20784313725490194" green="0.21568627450980393" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.85882352941176465" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="KlU-dt-Ysp" firstAttribute="leading" secondItem="OhF-rw-aRd" secondAttribute="leading" constant="16" id="7yV-C0-evl"/>
+                            <constraint firstItem="KlU-dt-Ysp" firstAttribute="centerX" secondItem="Oy1-R8-naD" secondAttribute="centerX" id="FMk-D0-r9x"/>
+                            <constraint firstItem="KlU-dt-Ysp" firstAttribute="top" secondItem="Oy1-R8-naD" secondAttribute="bottom" constant="8" id="KPo-92-rix"/>
+                            <constraint firstItem="Oy1-R8-naD" firstAttribute="top" secondItem="OhF-rw-aRd" secondAttribute="top" constant="16" id="VtO-UN-AbJ"/>
+                            <constraint firstItem="Oy1-R8-naD" firstAttribute="centerX" secondItem="OhF-rw-aRd" secondAttribute="centerX" id="k2q-ct-NSY"/>
+                            <constraint firstAttribute="trailing" secondItem="KlU-dt-Ysp" secondAttribute="trailing" constant="16" id="tRP-5Y-M2z"/>
+                            <constraint firstAttribute="bottom" secondItem="KlU-dt-Ysp" secondAttribute="bottom" constant="18" id="yjr-9Q-dRC"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="OhF-rw-aRd" secondAttribute="bottom" constant="10" id="1fp-qU-d1T"/>
+                    <constraint firstAttribute="trailing" secondItem="OhF-rw-aRd" secondAttribute="trailing" id="372-e9-NQu"/>
+                    <constraint firstItem="OhF-rw-aRd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="hsU-Zh-6Cu"/>
+                    <constraint firstItem="OhF-rw-aRd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="pXu-Zf-3Ai"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="subTitleLabel" destination="KlU-dt-Ysp" id="fOk-Qr-oL5"/>
+                <outlet property="titleLabel" destination="Oy1-R8-naD" id="Tup-4b-5v1"/>
+            </connections>
+            <point key="canvasLocation" x="187.68115942028987" y="102.79017857142857"/>
+        </tableViewCell>
+    </objects>
+</document>

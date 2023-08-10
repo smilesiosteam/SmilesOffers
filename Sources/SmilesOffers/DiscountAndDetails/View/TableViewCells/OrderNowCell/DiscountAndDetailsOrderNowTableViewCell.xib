@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Bold.otf">
+            <string>Montserrat-Bold</string>
+        </array>
+        <array key="Montserrat-SemiBold.otf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="128" id="KGk-i7-Jjw" customClass="DiscountAndDetailsOrderNowTableViewCell" customModule="Smiles" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="429" height="128"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="429" height="128"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mbH-J9-A5K">
+                        <rect key="frame" x="16" y="16" width="397" height="96"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="This restaurant is also accepting online food orders!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEo-PG-RiX">
+                                <rect key="frame" x="98" y="18" width="283" height="37"/>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <color key="highlightedColor" red="0.20784313725490194" green="0.21568627450980393" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="AccessibilityHint" value="HowItWorkTitle"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fire" translatesAutoresizingMaskIntoConstraints="NO" id="6xr-wo-NlW">
+                                <rect key="frame" x="18" y="16" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="EgZ-jl-Muu"/>
+                                    <constraint firstAttribute="width" secondItem="6xr-wo-NlW" secondAttribute="height" multiplier="1:1" id="ltc-jc-yz3"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Now" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GzU-zu-J4l">
+                                <rect key="frame" x="98" y="59" width="283" height="16"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="13"/>
+                                <color key="textColor" red="0.52941176470588236" green="0.32941176470588235" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="AccessibilityHint" value="HowItWorkTitle"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6xr-wo-NlW" firstAttribute="leading" secondItem="mbH-J9-A5K" secondAttribute="leading" constant="18" id="C7g-XV-vRe"/>
+                            <constraint firstAttribute="trailing" secondItem="fEo-PG-RiX" secondAttribute="trailing" constant="16" id="Jbn-vf-Iug"/>
+                            <constraint firstAttribute="bottom" secondItem="GzU-zu-J4l" secondAttribute="bottom" constant="21" id="VAP-cb-u3I"/>
+                            <constraint firstItem="fEo-PG-RiX" firstAttribute="leading" secondItem="6xr-wo-NlW" secondAttribute="trailing" constant="16" id="eE5-sd-H8i"/>
+                            <constraint firstItem="fEo-PG-RiX" firstAttribute="top" secondItem="mbH-J9-A5K" secondAttribute="top" constant="18" id="fUf-qe-OMQ"/>
+                            <constraint firstItem="GzU-zu-J4l" firstAttribute="leading" secondItem="fEo-PG-RiX" secondAttribute="leading" id="pJo-U2-rc9"/>
+                            <constraint firstItem="GzU-zu-J4l" firstAttribute="trailing" secondItem="fEo-PG-RiX" secondAttribute="trailing" id="t1Q-jg-qGr"/>
+                            <constraint firstItem="6xr-wo-NlW" firstAttribute="centerY" secondItem="mbH-J9-A5K" secondAttribute="centerY" id="tKx-MK-eIw"/>
+                            <constraint firstItem="GzU-zu-J4l" firstAttribute="top" secondItem="fEo-PG-RiX" secondAttribute="bottom" constant="4" id="vwG-rs-q08"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="mbH-J9-A5K" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Cfs-fJ-1pZ"/>
+                    <constraint firstAttribute="trailing" secondItem="mbH-J9-A5K" secondAttribute="trailing" constant="16" id="dJS-sL-flp"/>
+                    <constraint firstItem="mbH-J9-A5K" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="daV-cc-Sph"/>
+                    <constraint firstAttribute="bottom" secondItem="mbH-J9-A5K" secondAttribute="bottom" constant="16" id="vuu-nd-RCD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="icon" destination="6xr-wo-NlW" id="W4q-LR-Ilw"/>
+                <outlet property="orderNow" destination="GzU-zu-J4l" id="0pP-s5-Ul2"/>
+                <outlet property="paddedContainerView" destination="mbH-J9-A5K" id="zga-tF-GaO"/>
+                <outlet property="titleLbl" destination="fEo-PG-RiX" id="saZ-1f-c34"/>
+            </connections>
+            <point key="canvasLocation" x="65.94202898550725" y="70.3125"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="fire" width="64" height="65"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

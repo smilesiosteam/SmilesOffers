@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-SemiBold.ttf">
+            <string>Lato-SemiBold</string>
+        </array>
+        <array key="Montserrat-Bold.otf">
+            <string>Montserrat-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DiscountAndDetailsValidityTableViewCell" rowHeight="89" id="KGk-i7-Jjw" customClass="DiscountAndDetailsValidityTableViewCell" customModule="Smiles" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2pK-9G-jlz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hX4-gU-RbL">
+                                <rect key="frame" x="0.0" y="0.0" width="160" height="89"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31 Dec 2021" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="71i-IB-Z9d">
+                                        <rect key="frame" x="55" y="38.5" width="76" height="16"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="13"/>
+                                        <color key="textColor" red="0.20784313730000001" green="0.2156862745" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Estimate" translatesAutoresizingMaskIntoConstraints="NO" id="AX8-uP-5ex">
+                                        <rect key="frame" x="16" y="32.5" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="ZsG-om-436"/>
+                                            <constraint firstAttribute="width" constant="24" id="nUo-iM-LPR"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estimated Savings" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QBY-S3-cNP">
+                                        <rect key="frame" x="55" y="20" width="88" height="13.5"/>
+                                        <fontDescription key="fontDescription" name="Lato-SemiBold" family="Lato" pointSize="11"/>
+                                        <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="71i-IB-Z9d" firstAttribute="top" secondItem="QBY-S3-cNP" secondAttribute="bottom" constant="5" id="5M2-qY-WIq"/>
+                                    <constraint firstItem="AX8-uP-5ex" firstAttribute="leading" secondItem="hX4-gU-RbL" secondAttribute="leading" constant="16" id="DjR-NS-MJx"/>
+                                    <constraint firstItem="QBY-S3-cNP" firstAttribute="top" secondItem="hX4-gU-RbL" secondAttribute="top" constant="20" id="Ght-Ya-eZL"/>
+                                    <constraint firstItem="71i-IB-Z9d" firstAttribute="leading" secondItem="QBY-S3-cNP" secondAttribute="leading" id="M8a-hz-lc0"/>
+                                    <constraint firstItem="QBY-S3-cNP" firstAttribute="leading" secondItem="AX8-uP-5ex" secondAttribute="trailing" constant="15" id="ZAa-V2-oee"/>
+                                    <constraint firstItem="AX8-uP-5ex" firstAttribute="centerY" secondItem="hX4-gU-RbL" secondAttribute="centerY" id="lsZ-5d-k7S"/>
+                                    <constraint firstAttribute="height" constant="89" id="oM3-mz-H1B"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mUu-0q-oRN">
+                                <rect key="frame" x="160" y="0.0" width="160" height="89"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31 Dec 2021" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MZ5-ti-6FN">
+                                        <rect key="frame" x="55" y="38.5" width="76" height="16"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="13"/>
+                                        <color key="textColor" red="0.20784313730000001" green="0.2156862745" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="ocm-rx-AwR">
+                                        <rect key="frame" x="16" y="32.5" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="A3n-jt-6um"/>
+                                            <constraint firstAttribute="width" constant="24" id="PRx-BT-HYQ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valid Till" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QBS-cA-uxz">
+                                        <rect key="frame" x="55" y="20" width="41" height="13.5"/>
+                                        <fontDescription key="fontDescription" name="Lato-SemiBold" family="Lato" pointSize="11"/>
+                                        <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="MZ5-ti-6FN" firstAttribute="leading" secondItem="QBS-cA-uxz" secondAttribute="leading" id="1ee-Ju-dfS"/>
+                                    <constraint firstItem="ocm-rx-AwR" firstAttribute="centerY" secondItem="mUu-0q-oRN" secondAttribute="centerY" id="1in-2h-VUY"/>
+                                    <constraint firstItem="QBS-cA-uxz" firstAttribute="leading" secondItem="ocm-rx-AwR" secondAttribute="trailing" constant="15" id="jBi-qk-EWW"/>
+                                    <constraint firstItem="ocm-rx-AwR" firstAttribute="leading" secondItem="mUu-0q-oRN" secondAttribute="leading" constant="16" id="qKE-PX-ffi"/>
+                                    <constraint firstItem="QBS-cA-uxz" firstAttribute="top" secondItem="mUu-0q-oRN" secondAttribute="top" constant="20" id="vCu-6p-sS4"/>
+                                    <constraint firstItem="MZ5-ti-6FN" firstAttribute="top" secondItem="QBS-cA-uxz" secondAttribute="bottom" constant="5" id="zcj-Eh-mg4"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="mUu-0q-oRN" firstAttribute="height" secondItem="hX4-gU-RbL" secondAttribute="height" id="CeJ-Bp-cCX"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="2pK-9G-jlz" secondAttribute="bottom" id="IjP-Yv-IeL"/>
+                    <constraint firstItem="2pK-9G-jlz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="LuH-un-yxY"/>
+                    <constraint firstAttribute="trailing" secondItem="2pK-9G-jlz" secondAttribute="trailing" id="Luq-QL-pFy"/>
+                    <constraint firstItem="2pK-9G-jlz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="bjF-c6-aKU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="estimatedSavingsHeadingLabel" destination="QBY-S3-cNP" id="6kp-qZ-5s6"/>
+                <outlet property="estimatedSavingsLabel" destination="71i-IB-Z9d" id="hzN-ij-kK3"/>
+                <outlet property="estimatedView" destination="hX4-gU-RbL" id="yx5-Cb-Nol"/>
+                <outlet property="titleHeadingLabel" destination="QBS-cA-uxz" id="hKY-pr-ol2"/>
+                <outlet property="titleLabel" destination="MZ5-ti-6FN" id="OHS-uM-85s"/>
+                <outlet property="validTillView" destination="mUu-0q-oRN" id="hC0-d3-BsH"/>
+            </connections>
+            <point key="canvasLocation" x="18.840579710144929" y="65.959821428571431"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Estimate" width="64" height="64"/>
+        <image name="clock" width="26" height="30"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
