@@ -28,6 +28,7 @@ public struct OfferDO: Codable {
     public let cinemaOfferFlag: Bool?
     public let dirhamValue: String?
     public let imageURL: String?
+    public let redirectionURL: String?
     public var isWishlisted: Bool?
     public let offerDescription: String?
     public let offerId: String?
@@ -68,6 +69,7 @@ public struct OfferDO: Codable {
         case cinemaOfferFlag = "cinemaOfferFlag"
         case dirhamValue = "dirhamValue"
         case imageURL = "imageURL"
+        case redirectionURL = "redirectionURL"
         case isWishlisted = "isWishlisted"
         case offerDescription = "offerDescription"
         case offerId = "offerId"

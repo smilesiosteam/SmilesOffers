@@ -19,7 +19,7 @@ public class OffersCategoryRequestModel: SmilesBaseMainRequest {
     var subCategoryId: String?
     var subCategoryTypeIdsList: [String]?
     var isGuestUser: Bool?
-    
+    var tag: String?
     // MARK: - Model Keys
     
     enum CodingKeys: CodingKey {
@@ -28,17 +28,19 @@ public class OffersCategoryRequestModel: SmilesBaseMainRequest {
         case searchByLocation
         case sortingType
         case subCategoryId
+        case tag
         case subCategoryTypeIdsList
         case isGuestUser
     }
     
-    public init(pageNo: Int? = nil, categoryId: String?, searchByLocation: Bool? = nil, sortingType: String? = nil, subCategoryId: String? = nil, subCategoryTypeIdsList: [String]? = nil, isGuestUser: Bool? = nil) {
+    public init(pageNo: Int? = nil, categoryId: String?, searchByLocation: Bool? = nil, sortingType: String? = nil, subCategoryId: String? = nil, subCategoryTypeIdsList: [String]? = nil, isGuestUser: Bool? = nil, tag:String? = nil) {
         super.init()
         self.pageNo = pageNo
         self.categoryId = categoryId
         self.searchByLocation = searchByLocation
         self.sortingType = sortingType
         self.subCategoryId = subCategoryId
+        self.tag = tag
         self.subCategoryTypeIdsList = subCategoryTypeIdsList
         self.isGuestUser = isGuestUser
     }
@@ -57,5 +59,6 @@ public class OffersCategoryRequestModel: SmilesBaseMainRequest {
         try container.encodeIfPresent(self.subCategoryId, forKey: .subCategoryId)
         try container.encodeIfPresent(self.subCategoryTypeIdsList, forKey: .subCategoryTypeIdsList)
         try container.encodeIfPresent(self.isGuestUser, forKey: .isGuestUser)
+        try container.encodeIfPresent(self.tag, forKey: .tag)
     }
 }
