@@ -241,12 +241,14 @@ public class RestaurantsRevampTableViewCell: UITableViewCell {
             } else if let minimumOrderPrice = restaurant.minimumOrder, minimumOrderPrice > 0.0 {
                 minimumOrderPriceLabel.isHidden = false
                 minimumOrderTitleLabel.isHidden = false
-                minimumOrderSeparatorView.isHidden = true
-                deliveryChargesPriceLabel.isHidden = true
+                minimumOrderSeparatorView.isHidden = false
+                deliveryChargesPriceLabel.isHidden = false
                 deliveryChargesTitleLabel.isHidden = true
                 
                 minimumOrderPriceLabel.text = "\(minimumOrderPrice) \("AED".localizedString)"
                 minimumOrderTitleLabel.text = "RestaurantMinOrder".localizedString
+                
+                deliveryChargesPriceLabel.text = "FreeDeliveryText".localizedString
             } else if let deliveryChargesPrice = restaurant.deliveryCharges, deliveryChargesPrice > 0.0 {
                 minimumOrderPriceLabel.isHidden = true
                 minimumOrderTitleLabel.isHidden = true
@@ -254,14 +256,24 @@ public class RestaurantsRevampTableViewCell: UITableViewCell {
                 deliveryChargesPriceLabel.isHidden = false
                 deliveryChargesTitleLabel.isHidden = false
                 
-                deliveryChargesPriceLabel.text = "\(deliveryChargesPrice) \("AED".localizedString)"
-                deliveryChargesTitleLabel.text = "DeliveryCharges".localizedString
+                if let hasFoodSubscription = restaurant.isFoodSubscription, hasFoodSubscription {
+                    let deliveryChargesPriceText = "\(deliveryChargesPrice) \("AED".localizedString)"
+                    let deliveryChargesTitleText = "DeliveryCharges".localizedString
+                    
+                    deliveryChargesPriceLabel.attributedText = deliveryChargesPriceText.strikoutString(strikeOutColor: .appRevampClosingTextGrayColor)
+                    deliveryChargesTitleLabel.attributedText = deliveryChargesTitleText.strikoutString(strikeOutColor: .appRevampClosingTextGrayColor)
+                } else {
+                    deliveryChargesPriceLabel.text = "\(deliveryChargesPrice) \("AED".localizedString)"
+                    deliveryChargesTitleLabel.text = "DeliveryCharges".localizedString
+                }
             } else {
                 minimumOrderPriceLabel.isHidden = true
                 minimumOrderTitleLabel.isHidden = true
                 minimumOrderSeparatorView.isHidden = true
-                deliveryChargesPriceLabel.isHidden = true
+                deliveryChargesPriceLabel.isHidden = false
                 deliveryChargesTitleLabel.isHidden = true
+                
+                deliveryChargesPriceLabel.text = "FreeDeliveryText".localizedString
             }
         }
 
