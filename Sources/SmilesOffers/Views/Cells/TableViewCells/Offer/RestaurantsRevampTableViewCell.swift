@@ -16,6 +16,7 @@ public class RestaurantsRevampTableViewCell: UITableViewCell {
         case collectionDetails
         case categoryDetails
         case manCity
+        case smilesExplorer
     }
 
     // MARK: - IBOutlet
@@ -232,12 +233,21 @@ public class RestaurantsRevampTableViewCell: UITableViewCell {
                 
                 minimumOrderSeparatorView.isHidden = false
                 
-                deliveryChargesPriceLabel.text = "\(deliveryChargesPrice) \("AED".localizedString)"
                 deliveryChargesPriceLabel.isHidden = false
                 deliveryChargesTitleLabel.isHidden = false
                 
                 minimumOrderTitleLabel.text = "RestaurantMinOrder".localizedString
-                deliveryChargesTitleLabel.text = "DeliveryCharges".localizedString
+                
+                if let hasFoodSubscription = restaurant.isFoodSubscription, hasFoodSubscription {
+                    let deliveryChargesPriceText = "\(deliveryChargesPrice) \("AED".localizedString)"
+                    let deliveryChargesTitleText = "DeliveryCharges".localizedString
+                    
+                    deliveryChargesPriceLabel.attributedText = deliveryChargesPriceText.strikoutString(strikeOutColor: .appRevampClosingTextGrayColor)
+                    deliveryChargesTitleLabel.attributedText = deliveryChargesTitleText.strikoutString(strikeOutColor: .appRevampClosingTextGrayColor)
+                } else {
+                    deliveryChargesPriceLabel.attributedText = NSMutableAttributedString(string: "\(deliveryChargesPrice) \("AED".localizedString)")
+                    deliveryChargesTitleLabel.attributedText = NSMutableAttributedString(string: "DeliveryCharges".localizedString)
+                }
             } else if let minimumOrderPrice = restaurant.minimumOrder, minimumOrderPrice > 0.0 {
                 minimumOrderPriceLabel.isHidden = false
                 minimumOrderTitleLabel.isHidden = false
@@ -248,7 +258,7 @@ public class RestaurantsRevampTableViewCell: UITableViewCell {
                 minimumOrderPriceLabel.text = "\(minimumOrderPrice) \("AED".localizedString)"
                 minimumOrderTitleLabel.text = "RestaurantMinOrder".localizedString
                 
-                deliveryChargesPriceLabel.text = "FreeDeliveryText".localizedString
+                deliveryChargesPriceLabel.attributedText = NSMutableAttributedString(string: "FreeDeliveryText".localizedString)
             } else if let deliveryChargesPrice = restaurant.deliveryCharges, deliveryChargesPrice > 0.0 {
                 minimumOrderPriceLabel.isHidden = true
                 minimumOrderTitleLabel.isHidden = true
@@ -263,8 +273,8 @@ public class RestaurantsRevampTableViewCell: UITableViewCell {
                     deliveryChargesPriceLabel.attributedText = deliveryChargesPriceText.strikoutString(strikeOutColor: .appRevampClosingTextGrayColor)
                     deliveryChargesTitleLabel.attributedText = deliveryChargesTitleText.strikoutString(strikeOutColor: .appRevampClosingTextGrayColor)
                 } else {
-                    deliveryChargesPriceLabel.text = "\(deliveryChargesPrice) \("AED".localizedString)"
-                    deliveryChargesTitleLabel.text = "DeliveryCharges".localizedString
+                    deliveryChargesPriceLabel.attributedText = NSMutableAttributedString(string: "\(deliveryChargesPrice) \("AED".localizedString)")
+                    deliveryChargesTitleLabel.attributedText = NSMutableAttributedString(string: "DeliveryCharges".localizedString)
                 }
             } else {
                 minimumOrderPriceLabel.isHidden = true
@@ -273,7 +283,7 @@ public class RestaurantsRevampTableViewCell: UITableViewCell {
                 deliveryChargesPriceLabel.isHidden = false
                 deliveryChargesTitleLabel.isHidden = true
                 
-                deliveryChargesPriceLabel.text = "FreeDeliveryText".localizedString
+                deliveryChargesPriceLabel.attributedText = NSMutableAttributedString(string: "FreeDeliveryText".localizedString)
             }
         }
 
@@ -384,6 +394,9 @@ public class RestaurantsRevampTableViewCell: UITableViewCell {
         case .home:
             checkDealForEligability(offer: nearbyOffer)
         case .manCity:
+            notEligibleView.alpha = 0.0
+            self.isUserInteractionEnabled = true
+        case .smilesExplorer:
             notEligibleView.alpha = 0.0
             self.isUserInteractionEnabled = true
         default:
