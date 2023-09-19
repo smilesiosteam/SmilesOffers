@@ -18,6 +18,7 @@ public class OffersCategoryRequestModel: SmilesBaseMainRequest {
     var sortingType: String?
     var subCategoryId: String?
     var subCategoryTypeIdsList: [String]?
+    var categoryTypeIdsList: [String]?
     var isGuestUser: Bool?
     var tag: String?
     // MARK: - Model Keys
@@ -31,9 +32,10 @@ public class OffersCategoryRequestModel: SmilesBaseMainRequest {
         case tag
         case subCategoryTypeIdsList
         case isGuestUser
+        case categoryTypeIdsList
     }
     
-    public init(pageNo: Int? = nil, categoryId: String?, searchByLocation: Bool? = nil, sortingType: String? = nil, subCategoryId: String? = nil, subCategoryTypeIdsList: [String]? = nil, isGuestUser: Bool? = nil, tag:String? = nil) {
+    public init(pageNo: Int? = nil, categoryId: String?, searchByLocation: Bool? = nil, sortingType: String? = nil, subCategoryId: String? = nil, subCategoryTypeIdsList: [String]? = nil, isGuestUser: Bool? = nil, tag:String? = nil, categoryTypeIdsList : [String]? = nil) {
         super.init()
         self.pageNo = pageNo
         self.categoryId = categoryId
@@ -41,6 +43,7 @@ public class OffersCategoryRequestModel: SmilesBaseMainRequest {
         self.sortingType = sortingType
         self.subCategoryId = subCategoryId
         self.tag = tag
+        self.categoryTypeIdsList = categoryTypeIdsList
         self.subCategoryTypeIdsList = subCategoryTypeIdsList
         self.isGuestUser = isGuestUser
     }
@@ -60,5 +63,6 @@ public class OffersCategoryRequestModel: SmilesBaseMainRequest {
         try container.encodeIfPresent(self.subCategoryTypeIdsList, forKey: .subCategoryTypeIdsList)
         try container.encodeIfPresent(self.isGuestUser, forKey: .isGuestUser)
         try container.encodeIfPresent(self.tag, forKey: .tag)
+        try container.encodeIfPresent(self.categoryTypeIdsList, forKey: .categoryTypeIdsList)
     }
 }
