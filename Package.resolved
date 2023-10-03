@@ -50,8 +50,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/smilesiosteam/SmilesBaseMainRequest.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "306ab0bb0ba9433427dc91cf35ac24bf31d23ed7"
+        "branch" : "shared_models",
+        "revision" : "dbbbe487f66eb13e5a59e6a6b6b5537fe7dc878e"
       }
     },
     {
@@ -73,6 +73,15 @@
       }
     },
     {
+      "identity" : "smilessharedmodels",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/smilesiosteam/SmilesSharedModels.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "dbdb39fa160f3047d4c9b06b603e9936efc1b363"
+      }
+    },
+    {
       "identity" : "smilesstorage",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/smilesiosteam/SmilesStorage.git",
@@ -86,8 +95,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/smilesiosteam/SmilesUtilities.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "33e6264ea3b8db92838c8a7c951006dc1c2713a0"
+        "branch" : "shared_Models",
+        "revision" : "476eebf3f636d33d70b62afac4fab6ff8746c134"
       }
     }
   ],

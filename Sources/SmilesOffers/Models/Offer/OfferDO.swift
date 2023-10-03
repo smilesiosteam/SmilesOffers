@@ -7,6 +7,7 @@
 
 import Foundation
 import SmilesUtilities
+import SmilesSharedModels
 
 public struct OfferDO: Codable {
     public enum RecommendationModelType: String {

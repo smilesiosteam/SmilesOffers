@@ -8,6 +8,7 @@
 import UIKit
 import LottieAnimationManager
 import SmilesUtilities
+import SmilesSharedModels
 
 public class RestaurantsRevampTableViewCell: UITableViewCell {
     
