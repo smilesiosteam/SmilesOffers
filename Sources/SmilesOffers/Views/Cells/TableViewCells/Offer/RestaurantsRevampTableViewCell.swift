@@ -144,10 +144,14 @@ public class RestaurantsRevampTableViewCell: UITableViewCell {
         closingTimeLabel.fontTextStyle = .smilesBody4
         cuisinesLabel.fontTextStyle = .smilesBody3
         restaurantTitleLabel.fontTextStyle = .smilesHeadline3
-        minimumOrderPriceLabel.fontTextStyle = .smilesBody3
+        minimumOrderPriceLabel.fontTextStyle = .smilesTitle1
+        minimumOrderPriceLabel.textColor = .black
         minimumOrderTitleLabel.fontTextStyle = .smilesBody3
-        deliveryChargesPriceLabel.fontTextStyle = .smilesBody3
+        minimumOrderTitleLabel.textColor = .black.withAlphaComponent(0.6)
+        deliveryChargesPriceLabel.fontTextStyle = .smilesTitle1
+        deliveryChargesPriceLabel.textColor = .black
         deliveryChargesTitleLabel.fontTextStyle = .smilesBody3
+        deliveryChargesTitleLabel.textColor = .black.withAlphaComponent(0.6)
     }
     
     @objc private func setupFavoriteGesture() {
@@ -236,6 +240,9 @@ public class RestaurantsRevampTableViewCell: UITableViewCell {
                 deliveryChargesPriceLabel.isHidden = false
                 deliveryChargesTitleLabel.isHidden = false
                 
+                deliveryChargesPriceLabel.textColor = .black
+                deliveryChargesPriceLabel.fontTextStyle = .smilesTitle1
+                
                 minimumOrderTitleLabel.text = "RestaurantMinOrder".localizedString
                 
                 if let hasFoodSubscription = restaurant.isFoodSubscription, hasFoodSubscription {
@@ -255,6 +262,9 @@ public class RestaurantsRevampTableViewCell: UITableViewCell {
                 deliveryChargesPriceLabel.isHidden = false
                 deliveryChargesTitleLabel.isHidden = true
                 
+                deliveryChargesPriceLabel.textColor = .appRevampClosingTextGrayColor
+                deliveryChargesPriceLabel.fontTextStyle = .smilesBody3
+                
                 minimumOrderPriceLabel.text = "\(minimumOrderPrice) \("AED".localizedString)"
                 minimumOrderTitleLabel.text = "RestaurantMinOrder".localizedString
                 
@@ -265,6 +275,9 @@ public class RestaurantsRevampTableViewCell: UITableViewCell {
                 minimumOrderSeparatorView.isHidden = true
                 deliveryChargesPriceLabel.isHidden = false
                 deliveryChargesTitleLabel.isHidden = false
+                
+                deliveryChargesPriceLabel.textColor = .black
+                deliveryChargesPriceLabel.fontTextStyle = .smilesTitle1
                 
                 if let hasFoodSubscription = restaurant.isFoodSubscription, hasFoodSubscription {
                     let deliveryChargesPriceText = "\(deliveryChargesPrice) \("AED".localizedString)"
@@ -282,6 +295,9 @@ public class RestaurantsRevampTableViewCell: UITableViewCell {
                 minimumOrderSeparatorView.isHidden = true
                 deliveryChargesPriceLabel.isHidden = false
                 deliveryChargesTitleLabel.isHidden = true
+                
+                deliveryChargesPriceLabel.textColor = .appRevampClosingTextGrayColor
+                deliveryChargesPriceLabel.fontTextStyle = .smilesBody3
                 
                 deliveryChargesPriceLabel.attributedText = NSMutableAttributedString(string: "FreeDeliveryText".localizedString)
             }
