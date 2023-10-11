@@ -139,11 +139,22 @@ public class RestaurantsRevampTableViewCell: UITableViewCell {
     private func setupFonts() {
         offerLabel.fontTextStyle = .smilesBody4
         restaurantStatusLabel.fontTextStyle = .smilesTitle1
+        
         ratingLabel.fontTextStyle = .smilesBody4
+        ratingLabel.textColor = .black
+        
         locationLabel.fontTextStyle = .smilesBody4
+        locationLabel.textColor = .black
+        
         closingTimeLabel.fontTextStyle = .smilesBody4
+        closingTimeLabel.textColor = .black
+        
         cuisinesLabel.fontTextStyle = .smilesBody3
+        cuisinesLabel.textColor = .black
+        
         restaurantTitleLabel.fontTextStyle = .smilesHeadline3
+        restaurantTitleLabel.textColor = .black
+        
         minimumOrderPriceLabel.fontTextStyle = .smilesTitle1
         minimumOrderPriceLabel.textColor = .black
         minimumOrderTitleLabel.fontTextStyle = .smilesBody3
