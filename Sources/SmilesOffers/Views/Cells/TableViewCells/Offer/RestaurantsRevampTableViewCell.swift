@@ -748,8 +748,9 @@ public class RestaurantsRevampTableViewCell: UITableViewCell {
             lottieAnimationView.isHidden = false
             pointsIcon.isHidden = true
             lottieAnimationView.subviews.forEach({ $0.removeFromSuperview() })
-            LottieAnimationManager.showAnimationFromUrl(FromUrl: iconJsonAnimationUrl, animationBackgroundView: self.lottieAnimationView, removeFromSuper: false, loopMode: .playOnce, shouldAnimate: false) { _ in }
-            
+            if let url = URL(string: iconJsonAnimationUrl) {
+                LottieAnimationManager.showAnimationFromUrl(FromUrl: url, animationBackgroundView: self.lottieAnimationView, removeFromSuper: false, loopMode: .playOnce, shouldAnimate: false) { _ in }
+            }
         } else {
             pointsIcon.isHidden = false
             lottieAnimationView.isHidden = true
