@@ -41,8 +41,14 @@ extension OffersCategoryListViewModel {
     }
     
     private func getOffersCategoryList(pageNo: Int, categoryId: String, searchByLocation: Bool, sortingType: String?, subCategoryId: String = "1", subCategoryTypeIdsList: [String]?) {
-        let offersCategoryRequest = OffersCategoryRequestModel(pageNo: pageNo, categoryId: categoryId, searchByLocation: searchByLocation,  sortingType: sortingType, subCategoryId: subCategoryId, subCategoryTypeIdsList: subCategoryTypeIdsList, isGuestUser: AppCommonMethods.isGuestUser)
+        var offersCategoryRequest  : OffersCategoryRequestModel!
         
+        if categoryId == "9"{
+            offersCategoryRequest = OffersCategoryRequestModel(pageNo: pageNo, categoryId: categoryId, searchByLocation: searchByLocation, sortingType: sortingType, subCategoryId: subCategoryId, subCategoryTypeIdsList: nil, isGuestUser: AppCommonMethods.isGuestUser, categoryTypeIdsList: subCategoryTypeIdsList)
+        }else{
+            offersCategoryRequest = OffersCategoryRequestModel(pageNo: pageNo, categoryId: categoryId, searchByLocation: searchByLocation, sortingType: sortingType, subCategoryId: subCategoryId, subCategoryTypeIdsList: subCategoryTypeIdsList, isGuestUser: AppCommonMethods.isGuestUser, categoryTypeIdsList: nil)
+        }
+          
         let service = GetOffersCategoryListRepository(
             networkRequest: NetworkingLayerRequestable(requestTimeOut: 60),
             baseUrl: AppCommonMethods.serviceBaseUrl
@@ -61,6 +67,6 @@ extension OffersCategoryListViewModel {
                 debugPrint("got my response here \(response)")
                 self?.output.send(.fetchOffersCategoryListDidSucceed(response: response))
             }
-        .store(in: &cancellables)
+            .store(in: &cancellables)
     }
 }

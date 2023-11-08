@@ -1,12 +1,21 @@
 {
   "pins" : [
     {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "3dc6a42c7727c49bf26508e29b0a0b35f9c7e1ad",
+        "version" : "5.8.1"
+      }
+    },
+    {
       "identity" : "cryptoswift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/krzyzanowskim/CryptoSwift.git",
       "state" : {
-        "revision" : "32f641cf24fc7abc1c591a2025e9f2f572648b0f",
-        "version" : "1.7.2"
+        "revision" : "db51c407d3be4a051484a141bf0bff36c43d3b1e",
+        "version" : "1.8.0"
       }
     },
     {
@@ -28,12 +37,21 @@
       }
     },
     {
+      "identity" : "networkinglayer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/smilesiosteam/NetworkingLayer.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "ddcfd44bd223db33cc8dc2a19c6235f8cd167d9f"
+      }
+    },
+    {
       "identity" : "sdwebimage",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SDWebImage/SDWebImage.git",
       "state" : {
-        "revision" : "633996a807442ec28df9d33b0f88ce57a0e2fdbf",
-        "version" : "5.17.0"
+        "revision" : "fd1950de05a5ad77cb252fd88576c1e1809ee50d",
+        "version" : "5.18.4"
       }
     },
     {
@@ -51,7 +69,7 @@
       "location" : "https://github.com/smilesiosteam/SmilesBaseMainRequest.git",
       "state" : {
         "branch" : "main",
-        "revision" : "306ab0bb0ba9433427dc91cf35ac24bf31d23ed7"
+        "revision" : "a8275beebe22d78e75e5fb6ca6420f808249977a"
       }
     },
     {
@@ -60,7 +78,7 @@
       "location" : "https://github.com/smilesiosteam/SmilesFontsManager.git",
       "state" : {
         "branch" : "main",
-        "revision" : "1a7068cb5a728cb7761aceb44d1c1ab2e88eba74"
+        "revision" : "08f10b60a92cf507339595161289eabd55c9ab10"
       }
     },
     {
@@ -69,7 +87,7 @@
       "location" : "https://github.com/smilesiosteam/SmilesLanguageManager.git",
       "state" : {
         "branch" : "main",
-        "revision" : "c28ecadeb4df3785ba082363895b3d0248a9903a"
+        "revision" : "d70bc6f7a910dd4e7dcae9224b4988500cd1006e"
       }
     },
     {
@@ -87,7 +105,7 @@
       "location" : "https://github.com/smilesiosteam/SmilesUtilities.git",
       "state" : {
         "branch" : "main",
-        "revision" : "33e6264ea3b8db92838c8a7c951006dc1c2713a0"
+        "revision" : "fe62a50aa33ccb8e69615c91808ccaf13fcf7afa"
       }
     }
   ],
