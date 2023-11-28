@@ -434,7 +434,7 @@ public class RestaurantsRevampTableViewCell: UITableViewCell {
         restaurantStatusView.isHidden = true
         ratingView.isHidden = true
         closingTimeView.isHidden = true
-        restaurantDistanceView.isHidden = (offerCellType == .categoryDetails) ? false : true
+        restaurantDistanceView.isHidden = true
         partnerImageView.isHidden = false
         
         ribbonImageView.isHidden = !nearbyOffer.isFeatured
