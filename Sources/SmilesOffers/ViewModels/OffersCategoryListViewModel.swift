@@ -14,7 +14,7 @@ public class OffersCategoryListViewModel: NSObject {
     
     // MARK: - INPUT. View event methods
     public enum Input {
-        case getOffersCategoryList(pageNo: Int, categoryId: String, searchByLocation: Bool, sortingType: String?, subCategoryId: String, subCategoryTypeIdsList: [String]?)
+        case getOffersCategoryList(pageNo: Int, categoryId: String, searchByLocation: Bool, sortingType: String?, subCategoryId: String, subCategoryTypeIdsList: [String]?, latitude: Double, longitude: Double)
     }
     
     public enum Output {
@@ -32,24 +32,16 @@ extension OffersCategoryListViewModel {
         output = PassthroughSubject<Output, Never>()
         input.sink { [weak self] event in
             switch event {
-            case .getOffersCategoryList(let pageNo, let categoryId, let searchByLocation, let sortingType, let subCategoryId, let subCategoryTypeIdsList):
-                self?.getOffersCategoryList(pageNo: pageNo, categoryId: categoryId, searchByLocation: searchByLocation, sortingType: sortingType, subCategoryId: subCategoryId, subCategoryTypeIdsList: subCategoryTypeIdsList)
+            case .getOffersCategoryList(let pageNo, let categoryId, let searchByLocation, let sortingType, let subCategoryId, let subCategoryTypeIdsList, let latitude, let longitude):
+                self?.getOffersCategoryList(pageNo: pageNo, categoryId: categoryId, searchByLocation: searchByLocation, sortingType: sortingType, subCategoryId: subCategoryId, subCategoryTypeIdsList: subCategoryTypeIdsList, latitude:latitude, longitude:longitude )
                 
             }
         }.store(in: &cancellables)
         return output.eraseToAnyPublisher()
     }
     
-    private func getOffersCategoryList(pageNo: Int, categoryId: String, searchByLocation: Bool, sortingType: String?, subCategoryId: String = "1", subCategoryTypeIdsList: [String]?) {
+    private func getOffersCategoryList(pageNo: Int, categoryId: String, searchByLocation: Bool, sortingType: String?, subCategoryId: String = "1", subCategoryTypeIdsList: [String]?, latitude: Double, longitude: Double) {
         var offersCategoryRequest  : OffersCategoryRequestModel!
-
-        var latitude = 0.0
-        var longitude = 0.0
-        
-        if let userInfo = LocationStateSaver.getLocationInfo(){
-            latitude = Double((userInfo as? AppUserInfo)?.latitude ?? "0.0")
-            longitude = Double((userInfo as? AppUserInfo)?.longitude ?? "0.0")
-        }
 
         if categoryId == "9"{
             offersCategoryRequest = OffersCategoryRequestModel(pageNo: pageNo, categoryId: categoryId, searchByLocation: searchByLocation, sortingType: sortingType, subCategoryId: subCategoryId, subCategoryTypeIdsList: nil, isGuestUser: AppCommonMethods.isGuestUser, categoryTypeIdsList: subCategoryTypeIdsList, latitude:latitude, longitude:longitude)
