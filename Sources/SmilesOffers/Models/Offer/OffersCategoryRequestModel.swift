@@ -21,6 +21,8 @@ public class OffersCategoryRequestModel: SmilesBaseMainRequest {
     var categoryTypeIdsList: [String]?
     var isGuestUser: Bool?
     var tag: String?
+    var latitude = 0.0
+    var longitude = 0.0
     // MARK: - Model Keys
     
     enum CodingKeys: CodingKey {
@@ -33,9 +35,11 @@ public class OffersCategoryRequestModel: SmilesBaseMainRequest {
         case subCategoryTypeIdsList
         case isGuestUser
         case categoryTypeIdsList
+        case latitude
+        case longitude
     }
     
-    public init(pageNo: Int? = nil, categoryId: String?, searchByLocation: Bool? = nil, sortingType: String? = nil, subCategoryId: String? = nil, subCategoryTypeIdsList: [String]? = nil, isGuestUser: Bool? = nil, tag:String? = nil, categoryTypeIdsList : [String]? = nil) {
+    public init(pageNo: Int? = nil, categoryId: String?, searchByLocation: Bool? = nil, sortingType: String? = nil, subCategoryId: String? = nil, subCategoryTypeIdsList: [String]? = nil, isGuestUser: Bool? = nil, tag:String? = nil, categoryTypeIdsList : [String]? = nil, latitude:Double , longitude:Double) {
         super.init()
         self.pageNo = pageNo
         self.categoryId = categoryId
@@ -46,6 +50,8 @@ public class OffersCategoryRequestModel: SmilesBaseMainRequest {
         self.categoryTypeIdsList = categoryTypeIdsList
         self.subCategoryTypeIdsList = subCategoryTypeIdsList
         self.isGuestUser = isGuestUser
+        self.latitude = latitude
+        self.longitude = longitude
     }
     
     required init(from decoder: Decoder) throws {
@@ -64,5 +70,7 @@ public class OffersCategoryRequestModel: SmilesBaseMainRequest {
         try container.encodeIfPresent(self.isGuestUser, forKey: .isGuestUser)
         try container.encodeIfPresent(self.tag, forKey: .tag)
         try container.encodeIfPresent(self.categoryTypeIdsList, forKey: .categoryTypeIdsList)
+        try container.encodeIfPresent(self.latitude, forKey: .latitude)
+        try container.encodeIfPresent(self.longitude, forKey: .longitude)
     }
 }

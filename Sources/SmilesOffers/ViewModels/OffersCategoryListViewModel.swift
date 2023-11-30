@@ -42,11 +42,19 @@ extension OffersCategoryListViewModel {
     
     private func getOffersCategoryList(pageNo: Int, categoryId: String, searchByLocation: Bool, sortingType: String?, subCategoryId: String = "1", subCategoryTypeIdsList: [String]?) {
         var offersCategoryRequest  : OffersCategoryRequestModel!
+
+        var latitude = 0.0
+        var longitude = 0.0
         
+        if let userInfo = LocationStateSaver.getLocationInfo(){
+            latitude = Double((userInfo as? AppUserInfo)?.latitude ?? "0.0")
+            longitude = Double((userInfo as? AppUserInfo)?.longitude ?? "0.0")
+        }
+
         if categoryId == "9"{
-            offersCategoryRequest = OffersCategoryRequestModel(pageNo: pageNo, categoryId: categoryId, searchByLocation: searchByLocation, sortingType: sortingType, subCategoryId: subCategoryId, subCategoryTypeIdsList: nil, isGuestUser: AppCommonMethods.isGuestUser, categoryTypeIdsList: subCategoryTypeIdsList)
+            offersCategoryRequest = OffersCategoryRequestModel(pageNo: pageNo, categoryId: categoryId, searchByLocation: searchByLocation, sortingType: sortingType, subCategoryId: subCategoryId, subCategoryTypeIdsList: nil, isGuestUser: AppCommonMethods.isGuestUser, categoryTypeIdsList: subCategoryTypeIdsList, latitude:latitude, longitude:longitude)
         }else{
-            offersCategoryRequest = OffersCategoryRequestModel(pageNo: pageNo, categoryId: categoryId, searchByLocation: searchByLocation, sortingType: sortingType, subCategoryId: subCategoryId, subCategoryTypeIdsList: subCategoryTypeIdsList, isGuestUser: AppCommonMethods.isGuestUser, categoryTypeIdsList: nil)
+            offersCategoryRequest = OffersCategoryRequestModel(pageNo: pageNo, categoryId: categoryId, searchByLocation: searchByLocation, sortingType: sortingType, subCategoryId: subCategoryId, subCategoryTypeIdsList: subCategoryTypeIdsList, isGuestUser: AppCommonMethods.isGuestUser, categoryTypeIdsList: nil, latitude:latitude, longitude:longitude)
         }
           
         let service = GetOffersCategoryListRepository(
