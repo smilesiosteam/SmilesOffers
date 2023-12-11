@@ -23,9 +23,10 @@ public class OffersCategoryRequestModel: SmilesBaseMainRequest {
     var tag: String?
     var latitude : Double?
     var longitude : Double?
+    
     // MARK: - Model Keys
     
-    enum CodingKeys: CodingKey {
+    enum CodingKeys: String, CodingKey {
         case pageNo
         case categoryId
         case searchByLocation
@@ -35,8 +36,8 @@ public class OffersCategoryRequestModel: SmilesBaseMainRequest {
         case subCategoryTypeIdsList
         case isGuestUser
         case categoryTypeIdsList
-        case latitude
-        case longitude
+        case latitude = "locationLatitude"
+        case longitude = "locationLongitude"
     }
     
     public init(pageNo: Int? = nil, categoryId: String?, searchByLocation: Bool? = nil, sortingType: String? = nil, subCategoryId: String? = nil, subCategoryTypeIdsList: [String]? = nil, isGuestUser: Bool? = nil, tag:String? = nil, categoryTypeIdsList : [String]? = nil, latitude:Double? = nil, longitude:Double? = nil) {
