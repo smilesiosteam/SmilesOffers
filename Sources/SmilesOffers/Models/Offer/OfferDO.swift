@@ -54,7 +54,8 @@ public struct OfferDO: Codable {
     public let smileyPointsUrl: String?
     public var isFeatured = false
     public let recommendationModelEvent: String?
-
+    public var redirectionUrL: String?
+    
     enum CodingKeys: String, CodingKey {
         case categoryId = "categoryId"
         case categoryOrder = "categoryOrder"
@@ -91,5 +92,6 @@ public struct OfferDO: Codable {
         case paymentMethods = "paymentMethods"
         case smileyPointsUrl = "smileyPointsUrl"
         case recommendationModelEvent
+        case redirectionUrL
     }
 }

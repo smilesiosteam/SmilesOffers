@@ -42,7 +42,7 @@
       "location" : "https://github.com/smilesiosteam/NetworkingLayer.git",
       "state" : {
         "branch" : "main",
-        "revision" : "2e35894cf5026b81f339057604508f5d75d8358e"
+        "revision" : "0b94b8b6459d82dd97a0a54e8e9da6008af95fe0"
       }
     },
     {
@@ -105,7 +105,7 @@
       "location" : "https://github.com/smilesiosteam/SmilesUtilities.git",
       "state" : {
         "branch" : "main",
-        "revision" : "9ec5917046258f7d7d7f479c377423a26b74bc2a"
+        "revision" : "3b31403e69775fc510fab322aa04a8febac92560"
       }
     }
   ],
