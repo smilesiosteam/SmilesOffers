@@ -163,6 +163,12 @@ public class RestaurantsRevampTableViewCell: UITableViewCell {
         deliveryChargesPriceLabel.textColor = .black
         deliveryChargesTitleLabel.fontTextStyle = .smilesBody3
         deliveryChargesTitleLabel.textColor = .black.withAlphaComponent(0.6)
+        
+        offerPointsLabel.fontTextStyle = .smilesTitle1
+        offerPointsLabel.textColor = .black
+        offerPriceLabel.fontTextStyle = .smilesTitle1
+        offerPriceLabel.textColor = .black
+        offerOrSeparatorLabel.textColor = .black.withAlphaComponent(0.6)
     }
     
     @objc private func setupFavoriteGesture() {
