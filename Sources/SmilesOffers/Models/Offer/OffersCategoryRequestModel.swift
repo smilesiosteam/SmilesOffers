@@ -23,6 +23,7 @@ public class OffersCategoryRequestModel: SmilesBaseMainRequest {
     var tag: String?
     var latitude : Double?
     var longitude : Double?
+    var themeId: String?
     
     // MARK: - Model Keys
     
@@ -38,9 +39,10 @@ public class OffersCategoryRequestModel: SmilesBaseMainRequest {
         case categoryTypeIdsList
         case latitude = "locationLatitude"
         case longitude = "locationLongitude"
+        case themeId
     }
     
-    public init(pageNo: Int? = nil, categoryId: String?, searchByLocation: Bool? = nil, sortingType: String? = nil, subCategoryId: String? = nil, subCategoryTypeIdsList: [String]? = nil, isGuestUser: Bool? = nil, tag:String? = nil, categoryTypeIdsList : [String]? = nil, latitude:Double? = nil, longitude:Double? = nil) {
+    public init(pageNo: Int? = nil, categoryId: String?, searchByLocation: Bool? = nil, sortingType: String? = nil, subCategoryId: String? = nil, subCategoryTypeIdsList: [String]? = nil, isGuestUser: Bool? = nil, tag:String? = nil, categoryTypeIdsList : [String]? = nil, latitude:Double? = nil, longitude:Double? = nil, themeId: String? = nil) {
         super.init()
         self.pageNo = pageNo
         self.categoryId = categoryId
@@ -53,6 +55,7 @@ public class OffersCategoryRequestModel: SmilesBaseMainRequest {
         self.isGuestUser = isGuestUser
         self.latitude = latitude
         self.longitude = longitude
+        self.themeId = themeId
     }
     
     required init(from decoder: Decoder) throws {
@@ -73,5 +76,6 @@ public class OffersCategoryRequestModel: SmilesBaseMainRequest {
         try container.encodeIfPresent(self.categoryTypeIdsList, forKey: .categoryTypeIdsList)
         try container.encodeIfPresent(self.latitude, forKey: .latitude)
         try container.encodeIfPresent(self.longitude, forKey: .longitude)
+        try container.encodeIfPresent(self.themeId, forKey: .themeId)
     }
 }

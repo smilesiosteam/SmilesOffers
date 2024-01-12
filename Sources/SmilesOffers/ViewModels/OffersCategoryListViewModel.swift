@@ -14,7 +14,7 @@ public class OffersCategoryListViewModel: NSObject {
     
     // MARK: - INPUT. View event methods
     public enum Input {
-        case getOffersCategoryList(pageNo: Int, categoryId: String, searchByLocation: Bool, sortingType: String?, subCategoryId: String, subCategoryTypeIdsList: [String]?, latitude: Double, longitude: Double)
+        case getOffersCategoryList(pageNo: Int, categoryId: String, searchByLocation: Bool, sortingType: String?, subCategoryId: String, subCategoryTypeIdsList: [String]?, latitude: Double, longitude: Double, themeId:String? = nil)
     }
     
     public enum Output {
@@ -32,20 +32,22 @@ extension OffersCategoryListViewModel {
         output = PassthroughSubject<Output, Never>()
         input.sink { [weak self] event in
             switch event {
-            case .getOffersCategoryList(let pageNo, let categoryId, let searchByLocation, let sortingType, let subCategoryId, let subCategoryTypeIdsList, let latitude, let longitude):
-                self?.getOffersCategoryList(pageNo: pageNo, categoryId: categoryId, searchByLocation: searchByLocation, sortingType: sortingType, subCategoryId: subCategoryId, subCategoryTypeIdsList: subCategoryTypeIdsList, latitude:latitude, longitude:longitude )
+            case .getOffersCategoryList(let pageNo, let categoryId, let searchByLocation, let sortingType, let subCategoryId, let subCategoryTypeIdsList, let latitude, let longitude, let themeId):
+                self?.getOffersCategoryList(pageNo: pageNo, categoryId: categoryId, searchByLocation: searchByLocation, sortingType: sortingType, subCategoryId: subCategoryId, subCategoryTypeIdsList: subCategoryTypeIdsList, latitude:latitude, longitude:longitude, themeId: themeId )
                 
             }
         }.store(in: &cancellables)
         return output.eraseToAnyPublisher()
     }
     
-    private func getOffersCategoryList(pageNo: Int, categoryId: String, searchByLocation: Bool, sortingType: String?, subCategoryId: String = "1", subCategoryTypeIdsList: [String]?, latitude: Double, longitude: Double) {
+    private func getOffersCategoryList(pageNo: Int, categoryId: String, searchByLocation: Bool, sortingType: String?, subCategoryId: String = "1", subCategoryTypeIdsList: [String]?, latitude: Double, longitude: Double, themeId: String?) {
         var offersCategoryRequest  : OffersCategoryRequestModel!
 
         if categoryId == "9"{
             offersCategoryRequest = OffersCategoryRequestModel(pageNo: pageNo, categoryId: categoryId, searchByLocation: searchByLocation, sortingType: sortingType, subCategoryId: subCategoryId, subCategoryTypeIdsList: nil, isGuestUser: AppCommonMethods.isGuestUser, categoryTypeIdsList: subCategoryTypeIdsList, latitude:latitude, longitude:longitude)
-        }else{
+        }else if categoryId == "1"{
+            offersCategoryRequest = OffersCategoryRequestModel(pageNo: pageNo, categoryId: categoryId, searchByLocation: searchByLocation, sortingType: sortingType, subCategoryId: subCategoryId, subCategoryTypeIdsList: subCategoryTypeIdsList, isGuestUser: AppCommonMethods.isGuestUser, categoryTypeIdsList: nil, latitude:latitude, longitude:longitude,themeId: themeId)
+        } else {
             offersCategoryRequest = OffersCategoryRequestModel(pageNo: pageNo, categoryId: categoryId, searchByLocation: searchByLocation, sortingType: sortingType, subCategoryId: subCategoryId, subCategoryTypeIdsList: subCategoryTypeIdsList, isGuestUser: AppCommonMethods.isGuestUser, categoryTypeIdsList: nil, latitude:latitude, longitude:longitude)
         }
           
@@ -70,3 +72,6 @@ extension OffersCategoryListViewModel {
             .store(in: &cancellables)
     }
 }
+
+
+
