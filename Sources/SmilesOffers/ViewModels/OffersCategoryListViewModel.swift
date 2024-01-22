@@ -33,24 +33,26 @@ extension OffersCategoryListViewModel {
         input.sink { [weak self] event in
             switch event {
             case .getOffersCategoryList(let pageNo, let categoryId, let searchByLocation, let sortingType, let subCategoryId, let subCategoryTypeIdsList, let latitude, let longitude, let themeId):
-                self?.getOffersCategoryList(pageNo: pageNo, categoryId: categoryId, searchByLocation: searchByLocation, sortingType: sortingType, subCategoryId: subCategoryId, subCategoryTypeIdsList: subCategoryTypeIdsList, latitude:latitude, longitude:longitude, themeId: themeId )
+                self?.getOffersCategoryList(pageNo: pageNo, categoryId: categoryId, searchByLocation: searchByLocation, sortingType: sortingType, subCategoryId: subCategoryId, subCategoryTypeIdsList: subCategoryTypeIdsList, latitude:latitude, longitude:longitude, themeId: themeId)
                 
             }
         }.store(in: &cancellables)
         return output.eraseToAnyPublisher()
     }
     
-    private func getOffersCategoryList(pageNo: Int, categoryId: String, searchByLocation: Bool, sortingType: String?, subCategoryId: String = "1", subCategoryTypeIdsList: [String]?, latitude: Double, longitude: Double, themeId: String?) {
+    private func getOffersCategoryList(pageNo: Int, categoryId: String, searchByLocation: Bool, sortingType: String?, subCategoryId: String = "1", subCategoryTypeIdsList: [String]?, latitude: Double, longitude: Double, themeId: String? = nil) {
         var offersCategoryRequest  : OffersCategoryRequestModel!
 
         if categoryId == "9"{
             offersCategoryRequest = OffersCategoryRequestModel(pageNo: pageNo, categoryId: categoryId, searchByLocation: searchByLocation, sortingType: sortingType, subCategoryId: subCategoryId, subCategoryTypeIdsList: nil, isGuestUser: AppCommonMethods.isGuestUser, categoryTypeIdsList: subCategoryTypeIdsList, latitude:latitude, longitude:longitude)
-        }else if categoryId == "1"{
-            offersCategoryRequest = OffersCategoryRequestModel(pageNo: pageNo, categoryId: categoryId, searchByLocation: searchByLocation, sortingType: sortingType, subCategoryId: subCategoryId, subCategoryTypeIdsList: subCategoryTypeIdsList, isGuestUser: AppCommonMethods.isGuestUser, categoryTypeIdsList: nil, latitude:latitude, longitude:longitude,themeId: themeId)
-        } else {
+        }else {
             offersCategoryRequest = OffersCategoryRequestModel(pageNo: pageNo, categoryId: categoryId, searchByLocation: searchByLocation, sortingType: sortingType, subCategoryId: subCategoryId, subCategoryTypeIdsList: subCategoryTypeIdsList, isGuestUser: AppCommonMethods.isGuestUser, categoryTypeIdsList: nil, latitude:latitude, longitude:longitude)
         }
-          
+        
+        if let themeId = themeId {
+            offersCategoryRequest.themeId = "\(themeId)"
+        }
+        
         let service = GetOffersCategoryListRepository(
             networkRequest: NetworkingLayerRequestable(requestTimeOut: 60),
             baseUrl: AppCommonMethods.serviceBaseUrl
