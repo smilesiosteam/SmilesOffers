@@ -9,11 +9,13 @@ import Foundation
 import NetworkingLayer
 import SmilesUtilities
 
+
 // if you wish you can have multiple services like this in a project
 enum OffersCategoryListRequestBuilder {
     
     // organise all the end points here for clarity
     case getOffersCategoryList(request: OffersCategoryRequestModel)
+    case getOffersDetail(request: GetOfferDetailsRequest)
     
     // gave a default timeout but can be different for each.
     var requestTimeOut: Int {
@@ -24,6 +26,8 @@ enum OffersCategoryListRequestBuilder {
     var httpMethod: SmilesHTTPMethod {
         switch self {
         case .getOffersCategoryList:
+            return .POST
+        case .getOffersDetail:
             return .POST
         }
     }
@@ -44,12 +48,20 @@ enum OffersCategoryListRequestBuilder {
         switch self {
         case .getOffersCategoryList(let request):
             return request
+        case .getOffersDetail(request: let request):
+            return request
         }
     }
     
     // compose urls for each request
     func getURL(baseUrl: String) -> String {
-        return baseUrl + "home/get-offers-category-list"
+        switch self {
+        case .getOffersCategoryList:
+            return baseUrl + "home/get-offers-category-list"
+        case .getOffersDetail:
+            return baseUrl + "home/v1/offer-details"
+        }
+        
     }
 }
 
