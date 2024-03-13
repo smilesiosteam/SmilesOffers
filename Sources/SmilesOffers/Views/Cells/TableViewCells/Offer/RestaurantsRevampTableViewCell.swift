@@ -17,6 +17,7 @@ public class RestaurantsRevampTableViewCell: UITableViewCell {
         case categoryDetails
         case manCity
         case smilesExplorer
+        case favourite
     }
 
     // MARK: - IBOutlet
@@ -432,6 +433,10 @@ public class RestaurantsRevampTableViewCell: UITableViewCell {
         case .smilesExplorer:
             notEligibleView.alpha = 0.0
             self.isUserInteractionEnabled = true
+        case .favourite:
+            notEligibleView.alpha = 0.0
+            self.isUserInteractionEnabled = true
+            offerData?.isWishlisted = true
         default:
             checkOfferForEligibility(offer: nearbyOffer)
         }
