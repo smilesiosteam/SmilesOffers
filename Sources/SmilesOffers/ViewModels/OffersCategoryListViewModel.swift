@@ -40,7 +40,7 @@ extension OffersCategoryListViewModel {
         return output.eraseToAnyPublisher()
     }
     
-    private func getOffersCategoryList(pageNo: Int, categoryId: String, searchByLocation: Bool, sortingType: String?, subCategoryId: String = "1", subCategoryTypeIdsList: [String]?, latitude: Double, longitude: Double, themeId: String? = nil) {
+    private func getOffersCategoryList(pageNo: Int, categoryId: String, searchByLocation: Bool, sortingType: String?, subCategoryId: String?, subCategoryTypeIdsList: [String]?, latitude: Double, longitude: Double, themeId: String? = nil) {
         var offersCategoryRequest  : OffersCategoryRequestModel!
 
         if categoryId == "9"{
