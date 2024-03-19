@@ -14,7 +14,7 @@ public class OffersCategoryListViewModel: NSObject {
     
     // MARK: - INPUT. View event methods
     public enum Input {
-        case getOffersCategoryList(pageNo: Int, categoryId: String, searchByLocation: Bool, sortingType: String?, subCategoryId: String, subCategoryTypeIdsList: [String]?, latitude: Double, longitude: Double, themeId:String? = nil)
+        case getOffersCategoryList(pageNo: Int, categoryId: String, searchByLocation: Bool, sortingType: String?, subCategoryId: String?, subCategoryTypeIdsList: [String]?, latitude: Double, longitude: Double, themeId:String? = nil)
     }
     
     public enum Output {
