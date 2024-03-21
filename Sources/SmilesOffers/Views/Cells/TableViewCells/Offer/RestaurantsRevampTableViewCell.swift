@@ -469,6 +469,7 @@ public class RestaurantsRevampTableViewCell: UITableViewCell {
         locationImageView.image = UIImage(named: "timeIcon")
         
         if let offerDistance = Double(nearbyOffer.merchantDistance.asStringOrEmpty()), offerDistance > 0 {
+            locationView.isHidden = false
             if offerDistance > 1000.0 {
                 let formattedDistance = String(format: "%.2f", offerDistance / 1000) + " " + "KiloMeter".localizedString
                 if AppCommonMethods.languageIsArabic() {
